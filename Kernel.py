@@ -3,19 +3,10 @@ import triton
 
 @triton.jit
 def LiKernel(
-    h_ptr,
-    input_ptr,
-    output_ptr,
-    weight_rec_ptr,
-    weight_in_ptr,
-    weight_gate_ptr,
-    log_tau_ptr,
-    batch_size,
-    hidden_size,
-    input_size,
-    stride_h,
-    stride_in,
-    stride_out,
+    h_ptr, input_ptr, output_ptr, weight_rec_ptr,
+    weight_in_ptr, weight_gate_ptr, log_tau_ptr,
+    batch_size, hidden_size, input_size,
+    stride_h, stride_in, stride_out,
     BLOCK_SIZE: tl.constexpr,
 ):
     pid = tl.program_id(0)
